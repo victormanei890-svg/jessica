@@ -8,7 +8,9 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ data }) => {
-  const whatsappUrl = `https://wa.me/${data.contact.whatsapp}`;
+  // Garante que o número tenha apenas dígitos para o link
+  const whatsappDigits = data.contact.whatsapp.replace(/\D/g, '');
+  const whatsappUrl = `https://wa.me/${whatsappDigits}`;
 
   return (
     <section id="contact" className="py-24 px-6 bg-slate-900 text-white overflow-hidden relative">
@@ -30,7 +32,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">Email</p>
-                  <a href={`mailto:${data.contact.email}`} className="text-xl hover:text-rose-400 transition-colors">{data.contact.email}</a>
+                  <a href={`mailto:${data.contact.email}`} className="text-lg md:text-xl hover:text-rose-400 transition-colors break-all">{data.contact.email}</a>
                 </div>
               </div>
 
@@ -40,25 +42,27 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                 </div>
                 <div>
                   <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">Telefone / WhatsApp</p>
-                  <a href={`tel:${data.contact.phone}`} className="text-xl hover:text-rose-400 transition-colors">{data.contact.phone}</a>
+                  <a href={`tel:${whatsappDigits}`} className="text-lg md:text-xl hover:text-rose-400 transition-colors">{data.contact.phone}</a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-6">
-                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center shrink-0">
-                  <MapPin className="text-rose-400" size={24} />
+              {data.contact.address && (
+                <div className="flex items-start gap-6">
+                  <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center shrink-0">
+                    <MapPin className="text-rose-400" size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">Localização</p>
+                    <p className="text-lg md:text-xl text-slate-200">{data.contact.address}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">Localização</p>
-                  <p className="text-xl text-slate-200">{data.contact.address}</p>
-                </div>
-              </div>
+              )}
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm p-10 rounded-3xl border border-white/10">
+          <div className="bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/10">
             <h3 className="text-2xl font-bold mb-8">Redes Sociais</h3>
-            <div className="grid grid-cols-2 gap-4 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               <a 
                 href={`https://instagram.com/${data.contact.instagram}`} 
                 target="_blank" 
@@ -89,9 +93,6 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
               <MessageCircle size={24} />
               Enviar Mensagem WhatsApp
             </a>
-            <p className="text-center text-slate-500 mt-6 text-sm">
-              Resposta em até 24h úteis.
-            </p>
           </div>
         </div>
       </div>

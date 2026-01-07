@@ -2,6 +2,8 @@
 export interface SiteData {
   name: string;
   specialty: string;
+  heroBadge: string;
+  heroTitle: string;
   heroImage: string;
   bio: string;
   quote: string;
@@ -19,9 +21,11 @@ export interface SiteData {
 }
 
 export const INITIAL_DATA: SiteData = {
-  name: "Seu Nome Completo",
+  name: "Psicóloga Jéssica Moura",
   specialty: "Sua Especialidade • CRP 00/000000",
-  heroImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800&h=1000",
+  heroBadge: "Psicoterapia Acolhedora",
+  heroTitle: "Equilíbrio e Bem-estar Mental",
+  heroImage: "", // Iniciando vazio como solicitado
   bio: "Espaço reservado para sua apresentação pessoal e profissional. Aqui você pode contar um pouco sobre sua trajetória, formação e o que te motiva a trabalhar com a psicologia. Este texto é totalmente editável através do painel de configurações.",
   quote: "A psicoterapia é um encontro onde a cura acontece através da autenticidade e do acolhimento mútuo.",
   approachTitle: "Sugestão de Abordagem Terapêutica",
@@ -38,6 +42,6 @@ export const INITIAL_DATA: SiteData = {
     address: "Rua Exemplo, 123 - Bairro, Cidade - Estado",
     instagram: "seu_usuario",
     linkedin: "seu_perfil",
-    whatsapp: "5551999999999" // Exemplo claro: 55 (Brasil) + 51 (DDD) + Numero
+    whatsapp: "5551999999999"
   }
 };
