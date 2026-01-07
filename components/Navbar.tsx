@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#home" className="text-lg md:text-xl font-serif font-bold tracking-tight text-slate-800 uppercase">
+        <a href="#home" className="text-lg md:text-xl font-serif font-bold tracking-tight text-rose-600 uppercase">
           PSICÓLOGA <span className="text-rose-500">JÉSSICA</span>
         </a>
 
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-2 text-slate-800"
+          className="md:hidden p-2 text-rose-600"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}

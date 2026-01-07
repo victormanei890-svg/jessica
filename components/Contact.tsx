@@ -8,7 +8,7 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ data }) => {
-  // Garante que o número tenha apenas dígitos para o link
+  // Limpeza rigorosa para garantir que o link do WhatsApp funcione com todos os dígitos
   const whatsappDigits = data.contact.whatsapp.replace(/\D/g, '');
   const whatsappUrl = `https://wa.me/${whatsappDigits}`;
 
