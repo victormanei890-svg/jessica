@@ -8,13 +8,12 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ data }) => {
-  // Limpeza rigorosa para garantir que o link do WhatsApp funcione com todos os dígitos
+  // Limpeza absoluta para garantir que o link do WhatsApp não perca dígitos
   const whatsappDigits = data.contact.whatsapp.replace(/\D/g, '');
-  const whatsappUrl = `https://wa.me/${whatsappDigits}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappDigits}`;
 
   return (
     <section id="contact" className="py-24 px-6 bg-slate-900 text-white overflow-hidden relative">
-      {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-500/10 rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2" />
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -22,7 +21,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Vamos dar o próximo passo juntos?</h2>
             <p className="text-slate-400 text-xl mb-12 max-w-lg">
-              Estou à disposição para tirar suas dúvidas sobre o processo terapêutico e agendar sua primeira sessão.
+              Estou à disposição para tirar suas dúvidas e agendar sua primeira sessão.
             </p>
 
             <div className="space-y-8">
@@ -67,7 +66,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                 href={`https://instagram.com/${data.contact.instagram}`} 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl hover:bg-rose-500 transition-all group"
+                className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl hover:bg-rose-500 transition-all"
               >
                 <Instagram size={24} />
                 <span className="font-medium">Instagram</span>
@@ -76,7 +75,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                 href={`https://linkedin.com/in/${data.contact.linkedin}`} 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl hover:bg-blue-600 transition-all group"
+                className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl hover:bg-blue-600 transition-all"
               >
                 <Linkedin size={24} />
                 <span className="font-medium">LinkedIn</span>
