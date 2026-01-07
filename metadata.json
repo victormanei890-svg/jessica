@@ -1,0 +1,7 @@
+{
+  "name": "Psicóloga Connect - Portfolio Professional",
+  "description": "Um site completo e editável para psicólogas, com área administrativa oculta para atualização de conteúdo e design terapêutico sofisticado.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
