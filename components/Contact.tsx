@@ -10,7 +10,7 @@ interface ContactProps {
 const Contact: React.FC<ContactProps> = ({ data }) => {
   // Limpeza absoluta para garantir que o link do WhatsApp não perca dígitos
   const whatsappDigits = data.contact.whatsapp.replace(/\D/g, '');
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappDigits}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(whatsappDigits)}`;
 
   return (
     <section id="contact" className="py-24 px-6 bg-slate-900 text-white overflow-hidden relative">

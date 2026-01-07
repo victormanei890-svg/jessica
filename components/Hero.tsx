@@ -8,10 +8,10 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ data }) => {
-  // Limpeza absoluta para garantir que o link do WhatsApp não perca dígitos
+  // Garantia absoluta de limpeza do número do WhatsApp
   const cleanWhatsapp = data.contact.whatsapp.replace(/\D/g, '');
-  // Usando o formato de link mais estável para o WhatsApp
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${cleanWhatsapp}`;
+  // Link universal do WhatsApp com o número codificado
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${encodeURIComponent(cleanWhatsapp)}`;
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-[#FDFCFB]">
@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                 />
               ) : (
                 <div className="w-full h-full bg-[#FDFCFB]">
-                  {/* Totalmente vazio como solicitado */}
+                  {/* Espaço em branco limpo quando não há foto */}
                 </div>
               )}
             </div>
