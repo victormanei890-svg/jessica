@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { initializeApp, getApps } from "firebase/app";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { Analytics } from "@vercel/analytics/react";
 import { SiteData, INITIAL_DATA } from './types';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -86,6 +87,7 @@ const App: React.FC = () => {
       {isAdminOpen && (
         <AdminPanel data={siteData} onSave={handleUpdateData} onClose={() => setIsAdminOpen(false)} />
       )}
+      <Analytics />
     </div>
   );
 };
