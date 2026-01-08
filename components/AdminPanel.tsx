@@ -258,13 +258,9 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ data, onSave, onClose }) => {
                     <label className="block text-sm font-bold text-slate-500 mb-2">Email</label>
                     <input type="email" value={editData.contact.email} onChange={(e) => setEditData({...editData, contact: {...editData.contact, email: e.target.value}})} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" />
                   </div>
-                  <div>
+                  <div className="md:col-span-2">
                     <label className="block text-sm font-bold text-slate-500 mb-2">Instagram (usuário)</label>
                     <input type="text" value={editData.contact.instagram} onChange={(e) => setEditData({...editData, contact: {...editData.contact, instagram: e.target.value}})} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" placeholder="ex: jessica.psicologa" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-slate-500 mb-2">LinkedIn (perfil)</label>
-                    <input type="text" value={editData.contact.linkedin} onChange={(e) => setEditData({...editData, contact: {...editData.contact, linkedin: e.target.value}})} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl" />
                   </div>
                   <div className="md:col-span-2">
                     <label className="block text-sm font-bold text-slate-500 mb-2 flex items-center gap-2"><MapPin size={16}/> Endereço Comercial (Opcional)</label>

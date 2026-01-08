@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { SiteData } from '../types';
-import { Mail, Phone, MapPin, Instagram, Linkedin, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, MessageCircle } from 'lucide-react';
 
 interface ContactProps {
   data: SiteData;
@@ -61,24 +61,15 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
 
           <div className="bg-white/5 backdrop-blur-sm p-6 md:p-10 rounded-3xl border border-white/10">
             <h3 className="text-2xl font-bold mb-8">Redes Sociais</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <div className="mb-10">
               <a 
                 href={`https://instagram.com/${data.contact.instagram}`} 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl hover:bg-rose-500 transition-all"
+                className="flex items-center justify-center gap-4 p-5 bg-white/5 rounded-2xl hover:bg-rose-500 transition-all w-full group"
               >
                 <Instagram size={24} />
-                <span className="font-medium">Instagram</span>
-              </a>
-              <a 
-                href={`https://linkedin.com/in/${data.contact.linkedin}`} 
-                target="_blank" 
-                rel="noreferrer"
-                className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl hover:bg-blue-600 transition-all"
-              >
-                <Linkedin size={24} />
-                <span className="font-medium">LinkedIn</span>
+                <span className="font-bold text-lg">Acompanhe no Instagram</span>
               </a>
             </div>
 

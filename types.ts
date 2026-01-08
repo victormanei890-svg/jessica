@@ -15,7 +15,6 @@ export interface SiteData {
     phone: string;
     address: string;
     instagram: string;
-    linkedin: string;
     whatsapp: string;
   };
 }
@@ -41,7 +40,6 @@ export const INITIAL_DATA: SiteData = {
     phone: "(51) 99999-9999",
     address: "",
     instagram: "seu_usuario",
-    linkedin: "seu_perfil",
     whatsapp: "5551999999999" // Exemplo com 55 + DDD + Numero completo
   }
 };
