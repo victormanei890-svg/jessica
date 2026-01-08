@@ -24,7 +24,8 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
           <span className="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-rose-500 uppercase bg-rose-50 rounded-full">
             {data.heroBadge || "Psicoterapia Acolhedora"}
           </span>
-          <h1 className="text-4xl md:text-7xl font-bold text-slate-900 leading-[1.2] md:leading-[1.1] mb-6">
+          {/* Ajustado: md:text-5xl e lg:text-6xl para evitar tamanho excessivo no PC */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.2] md:leading-[1.1] mb-6">
             {data.heroTitle?.split('\n').map((line, i) => (
               <React.Fragment key={i}>
                 <span className={i === 0 ? "text-slate-900" : "text-rose-500"}>
